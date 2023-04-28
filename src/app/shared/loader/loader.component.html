@@ -1,4 +1,8 @@
-<div class="center">
+<div class="center"
+[ngClass]="{
+  'on-Loader':isHideLoading=== true,
+  'off-Loader':isHideLoading === false,
+  }">
   <div class="wave"></div>
   <div class="wave"></div>
   <div class="wave"></div>
@@ -10,7 +14,4 @@
   <div class="wave"></div>
   <div class="wave"></div>
 </div>
-<!-- [ngClass]="{
-  'on-Loader':isHideLoading=== true,
-  'off-Loader':isHideLoading === false,
-  }" -->
+

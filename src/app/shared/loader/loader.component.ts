@@ -12,11 +12,10 @@ export class LoaderComponent implements OnInit {
   constructor(){}
 
       ngOnInit(): void {
-        // let seconds = 2.55;
-
-        // setTimeout(() => { // set attribute value after 3 seconds,
-        //   this.isHideLoading=false;
-        // }, seconds * 1000);
+        let seconds = 2.55;
+        setTimeout(() => { // set attribute value after 3 seconds,
+          this.isHideLoading=false;
+        }, seconds * 800);
       }
 
 }
