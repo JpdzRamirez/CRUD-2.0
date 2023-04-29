@@ -6,6 +6,13 @@ body{
   flex-direction: column;
   align-items: center;
   margin: auto;
+
+.star {
+  position: absolute !important;
+  width: 2px;
+  height: 2px;
+  background-color: white;
+}
 }
 app-home{
   display: flex;

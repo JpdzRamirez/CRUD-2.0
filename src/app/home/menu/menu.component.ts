@@ -1,4 +1,4 @@
-import {  Component, OnInit } from '@angular/core';
+import {  Component, ElementRef, OnInit, QueryList, Renderer2, ViewChildren } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -7,11 +7,29 @@ import {  Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit  {
   // Sets the number of stars we wish to display
+  @ViewChildren('introStarwars',{read: ElementRef}) childStarwars: QueryList<ElementRef>;
 
+isHidding:boolean=true;
 
+constructor(private renderer:Renderer2, private host:ElementRef){
+
+}
 ngOnInit(): void {
+  //const intro=this.childStarwars;
 
+  const seconds=6;
   const numStars = 100;
+
+  setTimeout(()=>{
+    console.log("activationss");
+    this.renderer.removeAttribute(this.childStarwars.first.nativeElement,'hidden');
+  },seconds* 200);
+
+  setTimeout(() => {
+    this.isHidding=false;
+    this.renderer.removeChild(this.host.nativeElement,this.childStarwars.first.nativeElement);
+  }, seconds* 10000);
+
 
 // For every star we want to display
 

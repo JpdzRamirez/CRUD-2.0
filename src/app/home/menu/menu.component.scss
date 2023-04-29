@@ -1,15 +1,12 @@
-.star {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  background-color: white;
-}
+@import '../../utils/scss/positions/centred-style.scss';
+@import '../../utils/scss/menus/menu-futuristic-style.scss';
+@import '../../utils/scss/keyframes/exits-keyframe.scss';
+@import '../../utils/scss/keyframes/entrance-keyframe.scss';
 
 /* Set the animation, color, size and hide the text */
 .intro {
-    position: absolute;
+    position: fixed;
     top: 30%;
-    left: 35%;
     z-index: 1;
     animation: intro 6s ease-out 1s;
     color: rgb(75, 213, 238);
@@ -35,9 +32,8 @@
 
 /* Set the animation & hide the logo */
 .logo {
-    position: absolute;
+
     top: 20%;
-    left: 45%;
     z-index: 1;
     margin: auto;
     animation: logo 9s ease-out 9s;
