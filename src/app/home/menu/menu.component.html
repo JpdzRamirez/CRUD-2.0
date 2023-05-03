@@ -1,10 +1,15 @@
-<div class="centered-Container" #introStarwars hiddeen
+<!-- Section before intro finishes -->
+<div [ngSwitch]="itsTimeout">
+
+  <div *ngSwitchCase="0">
+
+<div class="centered-Container" #introStarwars
 [ngClass]="{
-  'on-Loader':isHidding=== true,
-  'off-Loader':isHidding === false,
+  'on-Loader':isHiddingIntro=== true,
+  'off-Loader':isHiddingIntro === false,
   }">
 
-  <section class="intro">
+  <section class="intro" >
     A long time ago, in a galaxy far,<br> far away....
   </section>
 
@@ -111,31 +116,33 @@
   </div>
 
 </div>
+  </div>
 
-
-<!-- Section before intro finishes -->
-
-<div class="all"
-[ngClass]="{
-  'on-Loader':isHidding=== false,
-  'off-Loader':isHidding === true,
-  }">
+  <div *ngSwitchCase="1">
+    <div style="opacity: 0;" class="all" #introStarwars
+    [ngClass]="{
+      'on-Loader':isShowMenu=== true,
+      }">
   <div class="lefter">
-    <div class="text">Hosting</div>
+    <div class="text" (click)="sqlButton()">SQL TRANSACT</div>
   </div>
   <div class="left">
-    <div class="text">Web Design</div>
+    <div class="text" (click)="frontButton()">Web Design</div>
   </div>
   <div class="center">
-    <div class="explainer"><span>Hover me</span></div>
-    <div class="text">Frontend Development</div>
+    <div class="explainer" (click)="loginButton()"><span>Hover me</span></div>
+    <div class="text" >Login</div>
     </div>
   <div class="right">
-    <div class="text">Backend Development</div>
+    <div class="text" (click)="backendButton()">Backend Development</div>
   </div>
   <div class="righter">
-    <div class="text">SEO</div>
+    <div class="text" (click)="contactButton()">Contact US</div>
   </div>
   </div>
+  </div>
+
+</div>
+
 
   <a href="https://github.com/JpdzRamirez" target="_blank" class="ref">🔗 Jpdz Ramirez</a>
